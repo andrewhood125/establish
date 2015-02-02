@@ -1,6 +1,4 @@
-dotfiles
+dotstrap
 ========
 
-Configuration files.
-
-`git clone ~/`
+Jumpstart your config by automatically installing dotfiles
