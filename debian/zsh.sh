@@ -1,3 +1,3 @@
 debian_zsh() {
-  echo "instaling zsh..."
+  echo "sudo apt-get install zsh"
 }

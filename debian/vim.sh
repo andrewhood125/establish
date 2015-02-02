@@ -1,3 +1,3 @@
 debian_vim() {
-  echo "installing vim..."
+  echo "sudo apt-get install vim"
 }

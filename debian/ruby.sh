@@ -1,3 +1,3 @@
 debian_ruby() {
-  eval "apt-get -qq install ruby"
+  eval "sudo apt-get -qq install ruby"
 }
