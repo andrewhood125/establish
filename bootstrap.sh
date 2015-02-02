@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Life is better in color
 source "colors.sh"
 
 # assue mac
@@ -19,10 +20,9 @@ for i in `ls ${OS}`; do
   . ${book}
 done
 
-# Install deps
+# Include the repos deps
+source "$1/dotstrap.sh"
 echo "Installing deps..."
-deps=(ruby zsh vim)
-
 for i in ${deps[@]}; do
   echo -e "${CYAN}"
   eval ${OS}_${i}
@@ -30,3 +30,6 @@ for i in ${deps[@]}; do
 done
 
 # copy config files over
+for i in `ls $1/dots`; do
+  cp -i $1/dots/$i ~/.$i
+done
