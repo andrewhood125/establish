@@ -8,4 +8,4 @@ Jumpstart your config by automatically installing dotfiles
 
 Prerequisites
 ------------
-`git 
+`git`
