@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Life is better in color
 source "colors.sh"
+source "util.sh"
 
 # assue mac
 OS="mac"
@@ -12,18 +12,15 @@ then
   OS="debian"
 fi
 
-# load books
+source "$1/dotstrap.sh"
 echo "Loading books..."
-for i in `ls ${OS}`; do
-  book="${OS}/${i}"
-  echo -e "\t${book}"
-  . ${book}
-done
+load_books "${deps[@]}"
+
+unique_deps=$( awk 'BEGIN{RS=ORS=" "}!a[$0]++' <<<${deps[@]} );
 
 # Include the repos deps
-source "$1/dotstrap.sh"
 echo "Installing deps..."
-for i in ${deps[@]}; do
+for i in ${unique_deps[@]}; do
   echo -e "${CYAN}"
   eval ${OS}_${i}
   echo -e "${RESET}"
