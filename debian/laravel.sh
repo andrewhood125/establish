@@ -3,5 +3,6 @@ load_books "${laravel_deps[@]}"
 deps=("${laravel_deps[@]}" "${deps[@]}")
 
 debian_laravel() {
-  # noop just deps
+  eval 'composer global require "laravel/installer=~1.1"'
+  eval 'composer global require "laravel/homestead=~2.0"'
 }
