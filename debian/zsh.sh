@@ -1,3 +1,3 @@
-_zsh() {
+_zsh_up() {
   eval "sudo apt-get install zsh"
 }

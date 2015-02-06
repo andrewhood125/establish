@@ -20,9 +20,17 @@ _load_books() {
   local caller="${1}"
   shift
   for i in "${@}"; do
+    generic_book="generic/${i}.sh"
     book="${OS}/${i}.sh"
-    echo -e "${caller} requires...\t${book}"
+
+    # Check if generic book
+    if [[ -f ${generic_book} ]] ; then
+      book="${generic_book}"
+    fi
+
+    echo -e "${caller} loading...\t${book}"
     . ${book}
+
   done
 }
 
