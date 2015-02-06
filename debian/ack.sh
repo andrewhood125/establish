@@ -1,3 +1,3 @@
-debian_ack() {
+_ack() {
   eval "sudo apt-get install ack"
 }

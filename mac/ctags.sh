@@ -1,3 +1,3 @@
-mac_ctags() {
+_ctags() {
   eval "brew install ctags"
 }

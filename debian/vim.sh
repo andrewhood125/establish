@@ -1,3 +1,3 @@
-debian_vim() {
+_vim() {
   eval "sudo apt-get install vim"
 }

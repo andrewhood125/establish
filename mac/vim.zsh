@@ -1,3 +1,3 @@
-mac_vim() {
+_vim() {
   eval "brew install vim"
 }

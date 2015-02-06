@@ -1,3 +1,3 @@
-mac_zsh() {
+_zsh() {
   eval "brew install zsh"
 }

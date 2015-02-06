@@ -1,3 +1,3 @@
-debian_curl() {
+_curl() {
   eval "sudo apt-get install curl"
 }

@@ -1,3 +1,3 @@
-debian_ctags() {
+_ctags() {
   eval "sudo apt-get install ctags"
 }

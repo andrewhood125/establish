@@ -1,3 +1,3 @@
-mac_php5_cli() {
+_php5_cli() {
   eval "brew install php56"
 }

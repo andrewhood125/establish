@@ -1,3 +1,3 @@
-mac_ack() {
+_ack() {
   eval "brew install ack"
 }

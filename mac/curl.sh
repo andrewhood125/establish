@@ -1,3 +1,3 @@
-mac_curl() {
+_curl() {
   eval "brew install curl"
 }

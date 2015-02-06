@@ -1,3 +1,3 @@
-debian_zsh() {
+_zsh() {
   eval "sudo apt-get install zsh"
 }
