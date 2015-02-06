@@ -1,6 +1,6 @@
 Guido
 ========
-[Guido](http://i.imgur.com/dCztLhK.jpg)
+![Guido](http://i.imgur.com/dCztLhK.jpg)
 
 Let Guido give you a peet stop! Automatically configure your development
 environment. 
