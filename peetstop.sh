@@ -6,8 +6,8 @@ unique_deps=()
 
 _determine_os
 _load_dotfiles_deps "${1}"
-_load_books "${deps[@]}"
+_load_books "${1}" "${deps[@]}"
 _trim_duplicates
-_install_deps
+_install_deps "up"
 _copy_dots "${1}"
 

@@ -1,5 +1,5 @@
 janus_deps=(vim curl ack ctags ruby)
-_load_books "${janus_deps[@]}"
+_load_books "janus" "${janus_deps[@]}"
 deps=("${janus_deps[@]}" "${deps[@]}")
 
 _janus() {
