@@ -7,6 +7,7 @@ _copy_dots() {
 _determine_os() {
   if [[ -f "/etc/debian_version" ]] ; then OS="debian"; fi
   if [[ `uname` == "Darwin" ]] ; then OS="mac"; fi
+  echo -e "OS:\t${OS}"
 }
 
 _install_deps() {
@@ -28,7 +29,6 @@ _load_books() {
       book="${generic_book}"
     fi
 
-    echo -e "${caller} loading...\t${book}"
     . ${book}
 
   done
@@ -36,9 +36,14 @@ _load_books() {
 
 _load_dotfiles_deps() {
   . "$1/guido.sh"
-  echo "${deps[@]}"
+  echo "deps:"
+  echo -e "\t${deps[@]}"
 }
 
 _trim_duplicates() {
+  echo "deps after load:"
+  echo -e "\t${deps[@]}"
   unique_deps=$( awk 'BEGIN{RS=ORS=" "}!a[$0]++' <<<${deps[@]} );
+  echo "unique_deps:"
+  echo -e "\t${unique_deps[@]}"
 }

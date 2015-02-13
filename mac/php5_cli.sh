@@ -1,3 +1,4 @@
+echo -e "\t${BASH_SOURCE}"
 _php5_cli_up() {
-  eval "brew install php56"
+  `brew install php56`
 }

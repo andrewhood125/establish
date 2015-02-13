@@ -1,13 +1,14 @@
+echo -e "\t${BASH_SOURCE}"
 _curl_installed() {
-  return hash curl 2>/dev/null;
+  return `hash curl 2>/dev/null`;
 }
 
 _curl_up() {
-  eval "brew install curl"
+  `brew install curl`
 }
 
 _curl() {
-  if [[ _curl_installed ]] ; then
+  if _curl_installed ; then
     echo -e "\talready installed."
   else
     _curl_up

@@ -1,3 +1,4 @@
+echo -e "\t${BASH_SOURCE}"
 _ack_up() {
-  eval "brew install ack"
+  `brew install ack`
 }

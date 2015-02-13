@@ -1,3 +1,4 @@
+echo -e "\t${BASH_SOURCE}"
 _vim_up() {
-  eval "brew install vim"
+  `brew install vim`
 }

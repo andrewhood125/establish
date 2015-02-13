@@ -1,3 +1,4 @@
+echo -e "\t${BASH_SOURCE}"
 _ctags_up() {
-  eval "brew install ctags"
+  `brew install ctags`
 }

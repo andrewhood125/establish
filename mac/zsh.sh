@@ -1,3 +1,4 @@
+echo -e "\t${BASH_SOURCE}"
 _zsh_up() {
-  eval "brew install zsh"
+  `brew install zsh`
 }
