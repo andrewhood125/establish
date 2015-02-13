@@ -4,5 +4,5 @@ _php5_mcrypt_installed() {
 }
 
 _php5_mcrypt_up() {
-  `sudo apt-get install php5-mcrypt`
+  eval "sudo apt-get install php5-mcrypt"
 }
