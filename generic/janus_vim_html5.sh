@@ -7,7 +7,7 @@ _janus_vim_html5_installed() {
 }
 
 _janus_vim_html5_up() {
-  `git clone https://github.com/othree/html5.vim.git ${HOME}/.janus/html5.vim`
+  eval "git clone https://github.com/othree/html5.vim.git ${HOME}/.janus/html5.vim"
 }
 
 _janus_vim_html5() {

@@ -8,7 +8,7 @@ _janus_vim_airline_installed() {
 }
 
 _janus_vim_airline_up() {
-  `git clone https://github.com/bling/vim-airline.git ${airline_dir}`
+  eval "git clone https://github.com/bling/vim-airline.git ${airline_dir}"
 }
 
 _janus_vim_airline() {

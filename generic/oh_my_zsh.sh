@@ -11,7 +11,7 @@ _oh_my_zsh_installed() {
 }
 
 _oh_my_zsh_up() {
-  `curl -L http://install.ohmyz.sh | sh`
+  eval "curl -L http://install.ohmyz.sh | sh"
 }
 
 _oh_my_zsh() {

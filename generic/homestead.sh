@@ -8,7 +8,7 @@ _homestead_installed() {
 }
 
 _homestead_up() {
-  `composer global require "laravel/homestead=~2.0"`
+  eval "composer global require "laravel/homestead=~2.0""
 }
 
 _homestead() {

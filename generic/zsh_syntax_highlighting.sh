@@ -11,7 +11,7 @@ _zsh_syntax_highlighting_installed() {
 }
 
 _zsh_syntax_highlighting_up() {
-  `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting`
+  eval "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 }
 
 _zsh_syntax_highlighting() {

@@ -8,7 +8,7 @@ _janus_vim_autoformat_installed() {
 }
 
 _janus_vim_autoformat_up() {
-  `git clone https://github.com/Chiel92/vim-autoformat.git ${autoformat_dir}`
+  eval "git clone https://github.com/Chiel92/vim-autoformat.git ${autoformat_dir}"
 }
 
 _janus_vim_autoformat() {

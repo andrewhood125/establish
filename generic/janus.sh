@@ -11,7 +11,7 @@ _janus_installed() {
 }
 
 _janus_up() {
-  `curl -Lo- https://bit.ly/janus-bootstrap | bash`
+  eval "curl -Lo- https://bit.ly/janus-bootstrap | bash"
 }
 
 _janus() {

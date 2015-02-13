@@ -7,8 +7,8 @@ _composer_installed() {
   return `hash composer 2>/dev/null`;
 }
 _composer_up() {
-  `curl -sS https://getcomposer.org/installer | php`
-  `sudo mv composer.phar /usr/local/bin/composer`
+  eval "curl -sS https://getcomposer.org/installer | php"
+  eval "sudo mv composer.phar /usr/local/bin/composer"
 }
 
 _composer() {
