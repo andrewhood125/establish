@@ -1,7 +1,7 @@
 echo -e "\t${BASH_SOURCE}"
 local_deps=(oh_my_zsh)
-_load_books "zsh-syntax-highlighting" "${local_deps[@]}"
 dep=("${local_deps[@]}" "${deps[@]}")
+_load_books "zsh-syntax-highlighting" "${local_deps[@]}"
 
 _zsh_syntax_highlighting_installed() {
   if [[ -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]] ; then

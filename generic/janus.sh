@@ -1,7 +1,7 @@
 echo -e "\t${BASH_SOURCE}"
 janus_deps=(vim curl ack ctags ruby)
-_load_books "janus" "${janus_deps[@]}"
 deps=("${janus_deps[@]}" "${deps[@]}")
+_load_books "janus" "${janus_deps[@]}"
 
 _janus_installed() {
   if [[ -d "${HOME}/.vim/janus" ]] ; then

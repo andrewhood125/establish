@@ -18,6 +18,8 @@ _install_deps() {
 }
 
 _load_books() {
+  echo "Current deps"
+  echo "${deps[@]}"
   local caller="${1}"
   shift
   for i in "${@}"; do

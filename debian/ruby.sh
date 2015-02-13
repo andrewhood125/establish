@@ -1,5 +1,5 @@
 echo -e "\t${BASH_SOURCE}"
 _ruby_up() {
-  eval "sudo apt-get install ruby"
-  eval "sudo apt-get install rake"
+  `sudo apt-get install ruby`
+  `sudo apt-get install rake`
 }

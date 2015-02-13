@@ -1,7 +1,7 @@
 echo -e "\t${BASH_SOURCE}"
-laravel_deps=(composer php5_mcrypt)
-_load_books "homestead" "${laravel_deps[@]}"
-deps=("${laravel_deps[@]}" "${deps[@]}")
+homestead_deps=(composer php5_mcrypt)
+deps=("${homestead_deps[@]}" "${deps[@]}")
+_load_books "homestead" "${homestead_deps[@]}"
 
 _homestead_installed() {
   return `hash homestead 2>/dev/null`;
