@@ -2,10 +2,11 @@ Guido
 ========
 ![Guido](http://i.imgur.com/dCztLhK.jpg)
 
-Let Guido give you a peet stop! Automatically configure your development
-environment. 
+Automatically configure your development environment.  
 
-Note: This project is still in early dev stages.
+Currently supporting: Mac, Debian, and *Ubuntu (in progress)*  
+
+*Note: This project is still in early dev stages.*  
 
 
 Usage
@@ -15,4 +16,4 @@ Usage
   - Get Guido on your machine: `git clone
     https://github.com/andrewhood125/guido`
   - Run `./peetstop.sh ~/path-to-dotfiles`
-  - Watch Cars.
+  - Watch [Cars](https://www.youtube.com/watch?v=fWCZPAXmtlo).
