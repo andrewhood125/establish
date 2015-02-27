@@ -25,7 +25,7 @@ _load_books() {
 }
 
 _load_remote_book() {
-  echo -e "\t${i}"
+  echo -e "\t${1}"
   . <(curl --silent ${REMOTE}${1})
 }
 
