@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _load_remote_book "${OS}/curl.sh"
 
 _curl_installed() {

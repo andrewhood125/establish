@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _load_remote_book "${OS}/php5_mcrypt.sh"
 mcrypt_deps=(php5_cli)
 deps=("${mcrypt_deps[@]}" "${deps[@]}")

@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 npm_deps=(nodejs curl)
 deps=("${npm_deps[@]}" "${deps[@]}")
 _load_books "npm" "${npm_deps[@]}"

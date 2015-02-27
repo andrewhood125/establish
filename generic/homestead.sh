@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 homestead_deps=(composer php5_mcrypt)
 deps=("${homestead_deps[@]}" "${deps[@]}")
 _load_books "homestead" "${homestead_deps[@]}"

@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 composer_deps=(php5_cli curl)
 deps=("${composer_deps[@]}" "${deps[@]}")
 _load_books "composer" "${composer_deps[@]}"

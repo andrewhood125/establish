@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _load_remote_book "${OS}/php5_fpm.sh"
 
 _php5_fpm_installed() {

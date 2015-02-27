@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _janus_vim_html5_installed() {
   if [[ -d "${HOME}/.janus/html5.vim" ]] ; then
     return 0;

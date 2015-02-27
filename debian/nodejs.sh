@@ -1,5 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
-
 _nodejs_up() {
   eval "echo 'deb http://http.debian.net/debian wheezy-backports main' | sudo tee -a /etc/apt/sources.list.d/establish.list"
   eval "sudo apt-get update"

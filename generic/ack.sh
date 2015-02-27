@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _load_remote_book "${OS}/ack.sh"
 
 _ack_installed() {

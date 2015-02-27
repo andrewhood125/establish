@@ -25,7 +25,8 @@ _load_books() {
 }
 
 _load_remote_book() {
-  . <(curl ${REMOTE}${1})
+  echo -e "\t${i}"
+  . <(curl --silent ${REMOTE}${1})
 }
 
 _load_dotfiles_deps() {

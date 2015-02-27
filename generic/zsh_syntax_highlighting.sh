@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 local_deps=(oh_my_zsh)
 dep=("${local_deps[@]}" "${deps[@]}")
 _load_books "zsh-syntax-highlighting" "${local_deps[@]}"

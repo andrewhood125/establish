@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 autoformat_dir="${HOME}/.janus/vim-autoformat"
 _janus_vim_autoformat_installed() {
   if [[ -d "${autoformat_dir}" ]] ; then

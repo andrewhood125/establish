@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _janus_vim_emmet_installed() {
   if [[ -d "${HOME}/.janus/emmet-vim" ]] ; then
     return 0;

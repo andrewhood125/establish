@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 airline_dir="${HOME}/.janus/vim-airline"
 _janus_vim_airline_installed() {
   if [[ -d "${airline_dir}" ]] ; then

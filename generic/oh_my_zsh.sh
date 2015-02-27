@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 oh_my_zsh_deps=(zsh curl)
 deps=("${oh_my_zsh_deps[@]}" "${deps[@]}")
 _load_books "oh-my-zsh" "${oh_my_zsh_deps[@]}"

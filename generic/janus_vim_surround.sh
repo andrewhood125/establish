@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _janus_vim_surround_installed() {
   if [[ -d "${HOME}/.janus/vim-surround" ]] ; then
     return 0;

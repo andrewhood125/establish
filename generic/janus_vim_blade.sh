@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _janus_vim_blade_installed() {
   if [[ -d "${HOME}/.janus/vim-blade" ]] ; then
     return 0;
