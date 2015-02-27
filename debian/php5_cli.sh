@@ -1,3 +1,3 @@
 _php5_cli_up() {
-  eval "sudo apt-get install php5-cli"
+  eval "sudo apt-get -y -q install php5-cli"
 }
