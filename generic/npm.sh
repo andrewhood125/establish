@@ -8,7 +8,7 @@ _npm_installed() {
 }
 
 _npm_up() {
-  eval "curl https://npmjs.org/install.sh | sudo sh"
+  eval "curl -Lo- https://npmjs.org/install.sh | sudo sh"
 }
 
 _npm() {
