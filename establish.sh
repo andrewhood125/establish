@@ -30,7 +30,7 @@ _load_remote_book() {
 }
 
 _load_dotfiles_deps() {
-  . "$1"
+  . "depends.sh"
   echo "deps:"
   echo -e "\t${deps[@]}"
 }
@@ -47,8 +47,8 @@ OS="Unknown"
 unique_deps=()
 
 _determine_os
-_load_dotfiles_deps "${1}"
+_load_dotfiles_deps
 echo "Loading books..."
-_load_books "${1}" "${deps[@]}"
+_load_books "depends.sh" "${deps[@]}"
 _trim_duplicates
 _install_deps
