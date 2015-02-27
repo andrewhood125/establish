@@ -1,5 +1,9 @@
 _php5_mcrypt_installed() {
-  return `dpkg -s php5-mcrypt 2>/dev/null`;
+  if [[ -a "/etc/php5/mods-available/mcrypt.ini" ]] ; then
+    return 0;
+  else
+    return 1;
+  fi
 }
 
 _php5_mcrypt_up() {
