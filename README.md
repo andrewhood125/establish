@@ -11,11 +11,15 @@ depends.sh
 ==========
 `depends.sh` is the file that establish uses to know what dependencies
 you have. It will load that file, load any recursive dependencies and
-then install them. 
+then install them. It has an array `deps` with space delimited strings.
+
+Example: depends.sh
+````
+deps=(composer nginx php5_fpm)
+````
 
 
 Usage
 -----
-  - Get establish on your machine: `git clone
-    https://github.com/andrewhood125/establish`
-  - Run `./establish.sh /some-path/depends.sh`
+  - cd into your project root or anywhere `./depends.sh` exists.
+  - Run `curl -Lo- http://bit.do/establish | bash`
