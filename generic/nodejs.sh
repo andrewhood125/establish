@@ -1,4 +1,5 @@
 echo -e "\t${BASH_SOURCE}"
+. "${OS}/nodejs.sh"
 
 _nodejs_installed() {
   return `hash node 2>/dev/null`;
