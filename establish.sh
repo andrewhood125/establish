@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 REMOTE="https://raw.githubusercontent.com/andrewhood125/establish/master/"
-
+TIME=$(date +"%s")
 
 _determine_os() {
   if [[ -f "/etc/debian_version" ]] ; then OS="debian"; fi
@@ -26,7 +26,7 @@ _load_books() {
 
 _load_remote_book() {
   echo -e "\t${1}"
-  . <(curl --silent ${REMOTE}${1})
+  . <(curl --silent ${REMOTE}${1}?time=${TIME})
 }
 
 _load_dotfiles_deps() {
@@ -50,6 +50,5 @@ _determine_os
 _load_dotfiles_deps "${1}"
 echo "Loading books..."
 _load_books "${1}" "${deps[@]}"
-declare -f
 _trim_duplicates
 _install_deps
