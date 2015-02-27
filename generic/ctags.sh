@@ -1,5 +1,5 @@
 echo -e "\t${BASH_SOURCE}"
-. "${OS}/ctags.sh"
+_load_remote_book "${OS}/ctags.sh"
 
 _ctags_installed() {
   return `hash ctags 2>/dev/null`;

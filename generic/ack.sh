@@ -1,5 +1,5 @@
 echo -e "\t${BASH_SOURCE}"
-. "${OS}/ack.sh"
+_load_remote_book "${OS}/ack.sh"
 
 _ack_installed() {
   return `hash ack 2>/dev/null`;

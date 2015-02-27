@@ -1,5 +1,5 @@
 echo -e "\t${BASH_SOURCE}"
-. "${OS}/vim.sh"
+_load_remote_book "${OS}/vim.sh"
 
 _vim_installed() {
   return `hash vim 2>/dev/null`;

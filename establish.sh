@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+REMOTE="https://raw.githubusercontent.com/andrewhood125/establish/master/"
+
 
 _determine_os() {
   if [[ -f "/etc/debian_version" ]] ; then OS="debian"; fi
@@ -14,14 +16,16 @@ _install_deps() {
 }
 
 _load_books() {
-  echo "Current deps"
-  echo "${deps[@]}"
   local caller="${1}"
+  echo "${caller} is loading..."
   shift
   for i in "${@}"; do
-    echo "curl https://raw.githubusercontent.com/andrewhood125/establish/master/generic/${i}.sh"
-    . <(curl https://raw.githubusercontent.com/andrewhood125/establish/master/generic/${i}.sh)
+    _load_remote_book "generic/${i}.sh"
   done
+}
+
+_load_remote_book() {
+  . <(curl ${REMOTE}${1})
 }
 
 _load_dotfiles_deps() {

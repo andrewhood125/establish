@@ -1,5 +1,5 @@
 echo -e "\t${BASH_SOURCE}"
-. "${OS}/nginx.sh"
+_load_remote_book "${OS}/nginx.sh"
 
 _nginx_installed() {
   return `hash nginx 2>/dev/null`;
