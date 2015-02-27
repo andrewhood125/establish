@@ -1,19 +1,21 @@
-Guido
+establish
 ========
-![Guido](http://i.imgur.com/dCztLhK.jpg)
 
-Automatically configure your development environment.  
+Operating System agnostic dependency management.
 
-Currently supporting: Mac, Debian, and *Ubuntu (in progress)*  
+Currently supporting: Mac and Debian
 
 *Note: This project is still in early dev stages.*  
+
+depends.sh
+==========
+`depends.sh` is the file that establish uses to know what dependencies
+you have. It will load that file, load any recursive dependencies and
+then install them. 
 
 
 Usage
 -----
-  - Get a Guido compliant dotfiles repo. `git clone
-    https://github.com/andrewhood125/dotfiles`
-  - Get Guido on your machine: `git clone
-    https://github.com/andrewhood125/guido`
-  - Run `./peetstop.sh ~/path-to-dotfiles`
-  - Watch [Cars](https://www.youtube.com/watch?v=fWCZPAXmtlo).
+  - Get establish on your machine: `git clone
+    https://github.com/andrewhood125/establish`
+  - Run `./establish.sh /some-path/depends.sh`

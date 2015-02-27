@@ -1,9 +1,3 @@
-_copy_dots() {
-  for i in `ls $1/dots`; do
-    cp -i $1/dots/$i ~/.$i
-  done
-}
-
 _determine_os() {
   if [[ -f "/etc/debian_version" ]] ; then OS="debian"; fi
   if [[ `uname` == "Darwin" ]] ; then OS="mac"; fi
@@ -37,7 +31,7 @@ _load_books() {
 }
 
 _load_dotfiles_deps() {
-  . "$1/guido.sh"
+  . "$1/depends.sh"
   echo "deps:"
   echo -e "\t${deps[@]}"
 }
