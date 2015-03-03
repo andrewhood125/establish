@@ -20,10 +20,10 @@ deps=(composer nginx php5_fpm)
 
 Installation
 ------------
-`wget
-https://raw.githubusercontent.com/andrewhood125/establish/master/establish`
-`chmod +x establish`
-`sudo mv establish /usr/local/bin/`
+
+`curl -Ss
+"https://raw.githubusercontent.com/andrewhood125/establish/master/install.sh" | bash`
+
 Usage
 -----
   - cd into your project root or anywhere `./depends.sh` exists.
