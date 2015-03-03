@@ -26,7 +26,8 @@ _load_books() {
 
 _load_remote_book() {
   echo -e "\t${1}"
-  . <(curl --silent ${REMOTE}${1}?time=${TIME})
+  curl -Ss --create-dirs "${REMOTE}${1}?time=${TIME}" -o "$HOME/.establish/${1}"
+  . "$HOME/.establish/${1}"
 }
 
 _load_dotfiles_deps() {
@@ -51,4 +52,5 @@ _load_dotfiles_deps
 echo "Loading books..."
 _load_books "depends.sh" "${deps[@]}"
 _trim_duplicates
+declare -f
 _install_deps
