@@ -1,4 +1,4 @@
-_load_remote_book "${OS}/zsh.sh"
+_load_book "${OS}/zsh.sh"
 
 _zsh_installed() {
   return `hash zsh 2>/dev/null`;

@@ -20,11 +20,11 @@ _load_books() {
   echo "${caller} is loading..."
   shift
   for i in "${@}"; do
-    _load_remote_book "generic/${i}.sh"
+    _load_book "generic/${i}.sh"
   done
 }
 
-_load_remote_book() {
+_load_book() {
   echo -e "\t${1}"
   . "$HOME/.establish/${1}"
 }

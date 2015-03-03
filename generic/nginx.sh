@@ -1,4 +1,4 @@
-_load_remote_book "${OS}/nginx.sh"
+_load_book "${OS}/nginx.sh"
 
 _nginx_installed() {
   return `hash nginx 2>/dev/null`;
