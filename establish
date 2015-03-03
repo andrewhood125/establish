@@ -1,1 +1,1 @@
-curl -Lo- http://bit.do/establish | bash
+curl -Lo- https://raw.githubusercontent.com/andrewhood125/establish/master/core.sh | bash
