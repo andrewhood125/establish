@@ -27,4 +27,4 @@ Installation
 Usage
 -----
   - cd into your project root or anywhere `./depends.sh` exists.
-  - Run `curl -Lo- http://bit.do/establish | bash`
+  - Run `establish`
