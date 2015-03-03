@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _ruby_installed() {
   return `hash ruby 2>/dev/null`;
 }

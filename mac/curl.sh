@@ -1,4 +1,3 @@
-echo -e "\t${BASH_SOURCE}"
 _curl_installed() {
   return `hash curl 2>/dev/null`;
 }
