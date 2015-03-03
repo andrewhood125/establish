@@ -12,8 +12,6 @@ depends.sh
 `depends.sh` is the file that establish uses to know what dependencies
 you have. It will load that file, load any recursive dependencies and
 then install them. It has an array `deps` with space delimited strings.
-
-Example: depends.sh
 ````
 deps=(composer nginx php5_fpm)
 ````
