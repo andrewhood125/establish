@@ -1,6 +1,5 @@
 establish
 ========
-
 Operating System agnostic dependency management.
 
 Currently supporting: Mac and Debian
@@ -19,8 +18,7 @@ deps=(composer nginx php5_fpm)
 Installation
 ------------
 
-`curl -Ss
-"https://raw.githubusercontent.com/andrewhood125/establish/master/install.sh" | bash`
+`bash <(curl http://git.io/pOwC)`
 
 Usage
 -----
