@@ -18,7 +18,7 @@ deps=(composer nginx php5_fpm)
 Installation
 ------------
 
-`bash <(curl http://git.io/pOwC)`
+`bash <(curl -sSL http://git.io/pOwC)`
 
 Usage
 -----
