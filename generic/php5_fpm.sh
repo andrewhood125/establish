@@ -1,7 +1,7 @@
 _load_book "${OS}/php5_fpm.sh"
 
 _php5_fpm_installed() {
-  return `hash php5-fpm 2>/dev/null`;
+  [ -d "/etc/php/fpm" ]
 }
 
 _php5_fpm() {
