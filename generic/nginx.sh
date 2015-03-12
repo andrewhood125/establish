@@ -1,7 +1,7 @@
 _load_book "${OS}/nginx.sh"
 
 _nginx_installed() {
-  return [ -d "/etc/nginx" ]
+  [ -d "/etc/nginx" ]
 }
 
 _nginx() {
