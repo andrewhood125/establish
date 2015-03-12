@@ -1,5 +1,5 @@
 _php5_mcrypt_installed() {
-  if [[ -a "/etc/php5/mods-available/mcrypt.ini" ]] ; then
+  if [[ -e "/etc/php5/mods-available/mcrypt.ini" ]] ; then
     return 0;
   else
     return 1;
