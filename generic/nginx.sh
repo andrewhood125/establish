@@ -1,7 +1,7 @@
 _load_book "${OS}/nginx.sh"
 
 _nginx_installed() {
-  return `hash nginx 2>/dev/null`;
+  return [ -d "/etc/nginx" ]
 }
 
 _nginx() {
