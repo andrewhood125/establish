@@ -24,6 +24,10 @@ _load_books() {
   echo "${caller} is loading..."
   shift
   for i in "${@}"; do
+    echo "i: ${i}"
+    i=${i//-/_}
+    echo "i: ${i}"
+
     _load_book "generic/${i}.sh"
     var=$i"_deps[@]"
 
@@ -44,6 +48,7 @@ _load_project_deps() {
 
 _trim_duplicates() {
   unique_deps=$( awk 'BEGIN{RS=ORS=" "}!a[$0]++' <<<${deps[@]} );
+  unique_deps=${unique_deps//-/_}
 }
 
 
