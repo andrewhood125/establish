@@ -9,11 +9,3 @@ _homestead_installed() {
 _homestead_up() {
   eval "composer global require "laravel/homestead=~2.0""
 }
-
-_homestead() {
-  if _homestead_installed ; then
-    echo -e "\talready installed."
-  else
-    _homestead_up
-  fi
-}

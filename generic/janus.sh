@@ -12,11 +12,3 @@ _janus_installed() {
 _janus_up() {
   eval "curl -Lo- https://bit.ly/janus-bootstrap | bash"
 }
-
-_janus() {
-  if _janus_installed ; then
-    echo -e "\talready installed."
-  else
-    _janus_up
-  fi
-}

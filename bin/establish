@@ -11,7 +11,11 @@ _determine_os() {
 _install_deps() {
   for i in ${unique_deps[@]}; do
     echo "Installing ${i}..."
-    eval _${i}
+    if ! _${i}_installed; then
+      eval _${i}_up;
+    else
+      echo -e "\talready installed."
+    fi
   done
 }
 
@@ -29,7 +33,7 @@ _load_book() {
   . "$HOME/.establish/${1}"
 }
 
-_load_dotfiles_deps() {
+_load_project_deps() {
   . "depends.sh"
 }
 
@@ -39,7 +43,7 @@ _trim_duplicates() {
 
 
 _determine_os
-_load_dotfiles_deps
+_load_project_deps
 _load_books "depends.sh" "${deps[@]}"
 _trim_duplicates
 _install_deps

@@ -12,11 +12,3 @@ _oh_my_zsh_installed() {
 _oh_my_zsh_up() {
   eval "curl -L http://install.ohmyz.sh | sh"
 }
-
-_oh_my_zsh() {
-  if _oh_my_zsh_installed ; then
-    echo -e "\talready installed."
-  else
-    _oh_my_zsh_up
-  fi
-}

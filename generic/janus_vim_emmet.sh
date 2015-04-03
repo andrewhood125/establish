@@ -8,11 +8,3 @@ _janus_vim_emmet_installed() {
 _janus_vim_emmet_up() {
   eval "git clone https://github.com/mattn/emmet-vim.git ${HOME}/.janus/emmet-vim"
 }
-
-_janus_vim_emmet() {
-  if _janus_vim_emmet_installed ; then
-    echo -e "\talready installed."
-  else
-    _janus_vim_emmet_up
-  fi
-}

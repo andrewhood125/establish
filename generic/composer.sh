@@ -9,11 +9,3 @@ _composer_up() {
   eval "curl -sS https://getcomposer.org/installer | php"
   eval "sudo mv composer.phar /usr/local/bin/composer"
 }
-
-_composer() {
-  if _composer_installed ; then
-    echo -e "\talready installed."
-  else
-    _composer_up
-  fi
-}

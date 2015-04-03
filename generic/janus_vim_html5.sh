@@ -8,11 +8,3 @@ _janus_vim_html5_installed() {
 _janus_vim_html5_up() {
   eval "git clone https://github.com/othree/html5.vim.git ${HOME}/.janus/html5.vim"
 }
-
-_janus_vim_html5() {
-  if _janus_vim_html5_installed ; then
-    echo -e "\talready installed."
-  else
-    _janus_vim_html5_up
-  fi
-}

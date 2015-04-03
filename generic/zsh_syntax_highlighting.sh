@@ -12,11 +12,3 @@ _zsh_syntax_highlighting_installed() {
 _zsh_syntax_highlighting_up() {
   eval "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 }
-
-_zsh_syntax_highlighting() {
-  if _zsh_syntax_highlighting_installed ; then
-    echo -e "\talready installed."
-  else
-    _zsh_syntax_highlighting_up
-  fi
-}
