@@ -1,6 +1,4 @@
 janus_deps=(vim curl ack ctags ruby)
-deps=("${janus_deps[@]}" "${deps[@]}")
-_load_books "janus" "${janus_deps[@]}"
 
 _janus_installed() {
   if [[ -d "${HOME}/.vim/janus" ]] ; then

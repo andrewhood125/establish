@@ -1,6 +1,4 @@
-local_deps=(oh_my_zsh)
-dep=("${local_deps[@]}" "${deps[@]}")
-_load_books "zsh-syntax-highlighting" "${local_deps[@]}"
+zsh_syntax_highlighting_deps=(oh_my_zsh)
 
 _zsh_syntax_highlighting_installed() {
   if [[ -d "${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]] ; then

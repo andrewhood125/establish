@@ -1,6 +1,4 @@
 oh_my_zsh_deps=(zsh curl)
-deps=("${oh_my_zsh_deps[@]}" "${deps[@]}")
-_load_books "oh-my-zsh" "${oh_my_zsh_deps[@]}"
 
 _oh_my_zsh_installed() {
   if [[ -d "${HOME}/.oh-my-zsh" ]] ; then

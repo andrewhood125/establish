@@ -25,6 +25,11 @@ _load_books() {
   shift
   for i in "${@}"; do
     _load_book "generic/${i}.sh"
+    var=$i"_deps[@]"
+
+    # Prepend any deps
+    deps=("${!var}" "${deps[@]}")
+    _load_books "${i}" "${!var}"
   done
 }
 
