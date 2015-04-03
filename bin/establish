@@ -24,22 +24,24 @@ _load_books() {
   echo "${caller} is loading..."
   shift
   for i in "${@}"; do
-    echo "i: ${i}"
-    i=${i//-/_}
-    echo "i: ${i}"
 
-    _load_book "generic/${i}.sh"
-    var=$i"_deps[@]"
+    # Replace - with _
+    i=${i//-/_}
+
+    _load_book "${i}.sh"
 
     # Prepend any deps
+    var=$i"_deps[@]"
     deps=("${!var}" "${deps[@]}")
+
     _load_books "${i}" "${!var}"
   done
 }
 
 _load_book() {
   echo -e "\t${1}"
-  . "$HOME/.establish/${1}"
+  . "$HOME/.establish/generic/${1}"
+  . "$HOME/.establish/${OS}/${1}" 2> /dev/null
 }
 
 _load_project_deps() {
