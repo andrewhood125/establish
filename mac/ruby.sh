@@ -5,13 +5,5 @@ _ruby_installed() {
 _ruby_up() {
   `brew install rbenv`
   `brew install ruby-build`
-  `rbenv install 2.1.5`
-}
-
-_ruby() {
-  if _ruby_installed ; then
-    echo -e "\talready installed."
-  else
-    _ruby_up
-  fi
+  `rbenv install 2.2.1`
 }

@@ -5,5 +5,5 @@ _janus_installed() {
 }
 
 _janus_up() {
-  eval "curl -Lo- https://bit.ly/janus-bootstrap | bash"
+  (curl -SsLo- https://bit.ly/janus-bootstrap | bash)>/dev/null 
 }

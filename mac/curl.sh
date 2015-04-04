@@ -5,11 +5,3 @@ _curl_installed() {
 _curl_up() {
   `brew install curl`
 }
-
-_curl() {
-  if _curl_installed ; then
-    echo -e "\talready installed."
-  else
-    _curl_up
-  fi
-}

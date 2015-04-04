@@ -1,4 +1,4 @@
 _zsh_up() {
-  eval "sudo apt-get install zsh"
-  eval "chsh --shell /bin/zsh"
+  sudo apt-get -qq install zsh
+  chsh --shell /bin/zsh
 }

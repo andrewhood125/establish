@@ -1,3 +1,3 @@
 _vim_up() {
-  eval "sudo apt-get install vim"
+  sudo apt-get -qq install vim
 }

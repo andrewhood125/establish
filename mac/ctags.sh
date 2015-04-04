@@ -1,3 +1,3 @@
 _ctags_up() {
-  `brew install ctags`
+  brew install ctags
 }

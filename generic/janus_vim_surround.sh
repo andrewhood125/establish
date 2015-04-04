@@ -1,10 +1,7 @@
 _janus_vim_surround_installed() {
-  if [[ -d "${HOME}/.janus/vim-surround" ]] ; then
-    return 0;
-  fi
-  return 1;
+  [ -d "${HOME}/.janus/vim-surround" ]
 }
 
 _janus_vim_surround_up() {
-  eval "git clone https://github.com/tpope/vim-surround.git ${HOME}/.janus/vim-surround"
+  git clone --quiet https://github.com/tpope/vim-surround.git ${HOME}/.janus/vim-surround
 }

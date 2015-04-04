@@ -1,11 +1,7 @@
 _php5_mcrypt_installed() {
-  if [[ -e "/etc/php5/mods-available/mcrypt.ini" ]] ; then
-    return 0;
-  else
-    return 1;
-  fi
+  [ -e "/etc/php5/mods-available/mcrypt.ini" ]
 }
 
 _php5_mcrypt_up() {
-  eval "sudo apt-get -y -q install php5-mcrypt"
+  sudo apt-get -qq install php5-mcrypt
 }

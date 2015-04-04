@@ -29,3 +29,4 @@ Usage
 Book Code Standards
 -------------------
   - Books should suppress all stdout
+  - They should require no input

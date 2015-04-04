@@ -1,4 +1,4 @@
 _nginx_up() {
-  eval "sudo apt-get -y -q install nginx"
+  sudo apt-get -qq install nginx
 }
 

@@ -1,3 +1,3 @@
 _ack_up() {
-  `brew install ack`
+  brew install ack
 }

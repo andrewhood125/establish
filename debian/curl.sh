@@ -1,3 +1,3 @@
 _curl_up() {
-  eval "sudo apt-get install curl"
+  sudo apt-get -qq install curl
 }

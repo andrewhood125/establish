@@ -1,3 +1,3 @@
 _ack_up() {
-  eval "sudo apt-get install ack"
+  sudo apt-get -qq install ack
 }
