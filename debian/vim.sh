@@ -1,3 +1,3 @@
 _vim_up() {
-  sudo apt-get -qq install vim
+  sudo apt-get -qq install vim > /dev/null
 }

@@ -3,5 +3,5 @@ _php5_mcrypt_installed() {
 }
 
 _php5_mcrypt_up() {
-  sudo apt-get -qq install php5-mcrypt
+  sudo apt-get -qq install php5-mcrypt > /dev/null
 }
