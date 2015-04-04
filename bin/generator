@@ -14,8 +14,8 @@ _${PACKAGE}_installed() {
 
 # Install ${PACKAGE}
 _${PACKAGE}_up() {
-  # git clone https://github.com/${PACKAGE}/${PACKAGE}
-  # apt-get install ${PACKAGE}
+  # git clone --quiet https://github.com/${PACKAGE}/${PACKAGE}
+  # apt-get -qq install ${PACKAGE} > /dev/null
   # brew install ${PACKAGE}
 }"
 
