@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
+# Include lib files
+. "${HOME}/.establish/lib/util.sh"
+
 OS="Unknown"
 unique_deps=()
-
-_determine_os() {
-  if [[ -f "/etc/debian_version" ]] ; then OS="debian"; fi
-  if [[ `uname` == "Darwin" ]] ; then OS="mac"; fi
-}
 
 _install_deps() {
   for i in ${unique_deps[@]}; do
