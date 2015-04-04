@@ -24,3 +24,8 @@ Usage
 -----
   - cd into your project root or anywhere `./depends.sh` exists.
   - Run `establish`
+
+
+Book Code Standards
+-------------------
+  - Books should suppress all stdout
