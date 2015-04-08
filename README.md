@@ -14,7 +14,8 @@ then install them. It has an array `deps` with space delimited strings.
 You can have an optional function `_after` that runs after all your
 dependencies are installed. Which is great for tasks that are only run
 once. e.g. symlink your vhost
-````
+
+```bash
 # My projects dependencies
 deps=(composer nginx php5_fpm)
 
@@ -25,7 +26,7 @@ _after() {
   sudo ln -s /etc/nginx/sites-available/${BASENAME} /etc/nginx/sites-enabled/${BASENAME}
   sudo service nginx restart
 }
-````
+```
 
 Installation
 ------------
