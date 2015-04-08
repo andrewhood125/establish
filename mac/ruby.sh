@@ -3,7 +3,7 @@ _ruby_installed() {
 }
 
 _ruby_up() {
-  `brew install rbenv`
-  `brew install ruby-build`
-  `rbenv install 2.2.1`
+  brew install rbenv >/dev/null
+  brew install ruby-build >/dev/null
+  rbenv install 2.2.1 >/dev/null
 }

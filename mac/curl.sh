@@ -3,5 +3,5 @@ _curl_installed() {
 }
 
 _curl_up() {
-  `brew install curl`
+  brew install curl >/dev/null
 }

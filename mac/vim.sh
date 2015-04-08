@@ -1,3 +1,3 @@
 _vim_up() {
-  `brew install vim`
+  brew install vim >/dev/null
 }

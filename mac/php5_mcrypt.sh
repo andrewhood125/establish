@@ -3,5 +3,5 @@ _php5_mcrypt_installed() {
 }
 
 _php5_mcrypt_up() {
-  `brew install php56-mcrypt`
+  brew install php56-mcrypt >/dev/null
 }
