@@ -37,9 +37,22 @@ _load_books() {
 }
 
 _load_book() {
-  echo -e "\t${1}"
-  . "$HOME/.establish/generic/${1}"
-  . "$HOME/.establish/${OS}/${1}" 2> /dev/null
+  GENERIC_BOOK="$HOME/.establish/generic/${1}"
+  OS_BOOK="$HOME/.establish/${OS}/${1}" 2> /dev/null
+
+  if [ -e $GENERIC_BOOK ] ; then
+    . $GENERIC_BOOK
+    echo -e "\tgeneric/$1"
+  else
+    echo -e "\tgeneric/$1 not found!"
+  fi
+
+  if [ -e $OS_BOOK ] ; then
+    . $OS_BOOK
+    echo -e "\t${OS}/$1"
+  else
+    echo -e "\t${OS}/$1 not found!"
+  fi
 }
 
 _load_project_deps() {
