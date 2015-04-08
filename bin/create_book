@@ -3,7 +3,7 @@
 # Show usage if incorrect number of args
 if [ "$#" -lt 2 ] ; then
   echo "USAGE:";
-  echo -e "\tbin/generator {package} {generic|debian|mac} [dependencies ...]\n"
+  echo -e "\t`basename ${0}` {package} {generic|debian|mac} [dependencies ...]\n"
   exit 0;
 fi
 
