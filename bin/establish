@@ -57,3 +57,7 @@ _load_project_deps
 _load_books "depends.sh" "${deps[@]}"
 _trim_duplicates
 _install_deps
+
+if $(type -t _after > /dev/null) ; then
+  _after
+fi
