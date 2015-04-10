@@ -33,8 +33,8 @@ _${PACKAGE}_up() {
 # Upgrade ${PACKAGE}
 _${PACKAGE}_upgrade() {
   # cd ~/.${PACKAGE} && git pull --quiet > /dev/null
-  # sudo apt-get install ${PACKAGE}
-  # brew upgrade ${PACKAGE}
+  # sudo apt-get -qq install ${PACKAGE} > /dev/null
+  # brew upgrade ${PACKAGE} > /dev/null
 }
 
 # Remove ${PACKAGE}
