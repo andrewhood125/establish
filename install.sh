@@ -1,5 +1,9 @@
-#! /usr/bin/env bash
-git clone https://github.com/andrewhood125/establish.git ~/.establish
-echo -e "\nAdd establish to your path and reload shell:\n"
-echo "    echo -e '# Add Establish to PATH\nexport PATH=\"\$PATH:\$HOME/.establish/bin\"' >> ~/.bashrc"
-echo "    source ~/.bashrc"
+#!/usr/bin/env bash
+
+SHELLRC="~/.`basename $SHELL`rc"
+
+git clone --quiet https://github.com/andrewhood125/establish.git ~/.establish
+
+echo -e "\nAdd establish to your PATH and reload $SHELL:\n"
+echo "    echo -e '\n# Add Establish to PATH\nexport PATH=\"\$PATH:\$HOME/.establish/bin\"' >> ${SHELLRC}"
+echo "    source ${SHELLRC}"
