@@ -26,8 +26,22 @@ _${PACKAGE}_installed() {
 # Install ${PACKAGE}
 _${PACKAGE}_up() {
   # git clone --quiet https://github.com/${PACKAGE}/${PACKAGE}
-  # apt-get -qq install ${PACKAGE} > /dev/null
+  # sudo apt-get -qq install ${PACKAGE} > /dev/null
   # brew install ${PACKAGE} > /dev/null
+}
+
+# Upgrade ${PACKAGE}
+_${PACKAGE}_upgrade() {
+  # cd ~/.${PACKAGE} && git pull --quiet > /dev/null
+  # sudo apt-get install ${PACKAGE}
+  # brew upgrade ${PACKAGE}
+}
+
+# Remove ${PACKAGE}
+_${PACKAGE}_down() {
+  # rm -rf ~/.${PACKAGE}
+  # sudo apt-get -qq remove ${PACKAGE} > /dev/null
+  # brew remove ${PACKAGE} > /dev/null
 }"
 
-echo "${BLOCK}" > "${ESTABLISH_DIR}/${OS}/${PACKAGE}.sh"
+echo "${BLOCK}" >> "${ESTABLISH_DIR}/${OS}/${PACKAGE}.sh"

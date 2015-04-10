@@ -42,6 +42,12 @@ for i in ${unique_deps[@]}; do
       echo -e "\tnot installed."
     fi
 
+  elif [ "$COMMAND" == "upgrade" ] ; then
+
+    echo "Upgrading ${i}..."
+
+    eval _${i}_upgrade;
+
   else
 
     echo "Installing ${i}..."

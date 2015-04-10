@@ -4,13 +4,13 @@ ESTABLISH_DIR="${HOME}/.establish"
 
 _establish_usage() {
   echo "USAGE:";
-  echo -e "\t`basename ${0}` [up]"
+  echo -e "\t`basename ${0}` [up|down|upgrade]"
   echo -e "\t`basename ${0}` create"
   exit 1;
 }
 
 case "$1" in
-  "" | "up" | "down")
+  "" | "up" | "down" | "upgrade")
     COMMAND=$1
     shift
     . "${ESTABLISH_DIR}/lib/up.sh"
