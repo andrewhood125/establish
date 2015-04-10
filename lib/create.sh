@@ -1,10 +1,8 @@
-#! /usr/bin/env bash
-
 # Show usage if incorrect number of args
 if [ "$#" -lt 2 ] ; then
   echo "USAGE:";
-  echo -e "\t`basename ${0}` {package} {generic|debian|mac} [dependencies ...]\n"
-  exit 0;
+  echo -e "\t`basename ${0}` create ${1:-package} {generic|debian|mac} [dependencies ...]\n"
+  exit 1;
 fi
 
 PACKAGE=${1//-/_}
@@ -32,4 +30,4 @@ _${PACKAGE}_up() {
   # brew install ${PACKAGE} > /dev/null
 }"
 
-echo "${BLOCK}" > ${OS}/${PACKAGE}.sh
+echo "${BLOCK}" > "${ESTABLISH_DIR}/${OS}/${PACKAGE}.sh"

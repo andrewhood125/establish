@@ -1,76 +1,24 @@
 #!/usr/bin/env bash
 
-# Include lib files
-. "${HOME}/.establish/lib/util.sh"
+ESTABLISH_DIR="${HOME}/.establish"
 
-OS="Unknown"
-unique_deps=()
-
-_install_deps() {
-  for i in ${unique_deps[@]}; do
-    echo "Installing ${i}..."
-    if ! _${i}_installed; then
-      eval _${i}_up;
-    else
-      echo -e "\talready installed."
-    fi
-  done
+_establish_usage() {
+  echo "USAGE:";
+  echo -e "\t`basename ${0}` [up]"
+  echo -e "\t`basename ${0}` create"
+  exit 1;
 }
 
-_load_books() {
-  local caller="${1}"
-  echo "${caller} is loading..."
-  shift
-  for i in "${@}"; do
-
-    # Replace - with _
-    i=${i//-/_}
-
-    _load_book "${i}.sh"
-
-    # Prepend any deps
-    var=$i"_deps[@]"
-    deps=("${!var}" "${deps[@]}")
-
-    _load_books "${i}" "${!var}"
-  done
-}
-
-_load_book() {
-  GENERIC_BOOK="$HOME/.establish/generic/${1}"
-  OS_BOOK="$HOME/.establish/${OS}/${1}" 2> /dev/null
-
-  if [ -e $GENERIC_BOOK ] ; then
-    . $GENERIC_BOOK
-    echo -e "\tgeneric/$1"
-  else
-    echo -e "\tgeneric/$1 not found!"
-  fi
-
-  if [ -e $OS_BOOK ] ; then
-    . $OS_BOOK
-    echo -e "\t${OS}/$1"
-  else
-    echo -e "\t${OS}/$1 not found!"
-  fi
-}
-
-_load_project_deps() {
-  . "depends.sh"
-}
-
-_trim_duplicates() {
-  unique_deps=$( awk 'BEGIN{RS=ORS=" "}!a[$0]++' <<<${deps[@]} );
-  unique_deps=${unique_deps//-/_}
-}
-
-
-_determine_os
-_load_project_deps
-_load_books "depends.sh" "${deps[@]}"
-_trim_duplicates
-_install_deps
-
-if $(type -t _after > /dev/null) ; then
-  _after
-fi
+case "$1" in
+  "" | "up")
+    shift
+    . "${ESTABLISH_DIR}/lib/up.sh"
+    ;;
+  "create")
+    shift
+    . "${ESTABLISH_DIR}/lib/create.sh"
+    ;;
+  *)
+    _establish_usage
+    ;;
+esac
