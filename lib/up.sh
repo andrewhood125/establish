@@ -31,11 +31,27 @@ unique_deps=${unique_deps//-/_}
 
 # install dependencies
 for i in ${unique_deps[@]}; do
-  echo "Installing ${i}..."
-  if ! _${i}_installed; then
-    eval _${i}_up;
+
+  if [ "$COMMAND" == "down" ] ; then
+
+    echo "Removing ${i}..."
+
+    if _${i}_installed; then
+      eval _${i}_down;
+    else
+      echo -e "\tnot installed."
+    fi
+
   else
-    echo -e "\talready installed."
+
+    echo "Installing ${i}..."
+
+    if ! _${i}_installed; then
+      eval _${i}_up;
+    else
+      echo -e "\talready installed."
+    fi
+
   fi
 done
 
