@@ -1,9 +1,22 @@
-janus_deps=(vim curl ack ctags ruby)
+# janus dependencies
+janus_deps=(vim curl ctags ruby)
 
+# Is janus installed?
 _janus_installed() {
   [ -d "${HOME}/.vim/janus" ]
 }
 
+# Install janus
 _janus_up() {
-  (curl -SsLo- https://bit.ly/janus-bootstrap | bash)>/dev/null 
+  curl -sSLo- https://bit.ly/janus-bootstrap | bash
+}
+
+# Upgrade janus
+_janus_upgrade() {
+  cd ~/.vim/janus && rake
+}
+
+# Remove janus
+_janus_down() {
+  rm -rf ~/.vim
 }

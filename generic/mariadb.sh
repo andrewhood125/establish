@@ -1,3 +1,2 @@
-_mariadb_installed() {
-  [ -d "/etc/mysql" ]
-}
+# mariadb dependencies
+mariadb_deps=()

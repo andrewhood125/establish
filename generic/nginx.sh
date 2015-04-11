@@ -1,3 +1,2 @@
-_nginx_installed() {
-  [ -d "/etc/nginx" ]
-}
+# nginx dependencies
+nginx_deps=()
