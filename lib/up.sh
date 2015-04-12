@@ -4,7 +4,7 @@ unique_deps=()
 . "${ESTABLISH_DIR}/lib/load.sh"
 
 # look for depends.sh or fail
-if [ -z "$TEST" ] ; then
+if [ -n "$TEST" ] ; then
   echo "TEST MODE"
 elif [ ! -e "depends.sh" ] ; then
   echo "depends.sh not found."
