@@ -1,4 +1,4 @@
-blade_dir="${HOME}/.janus/vim-blade}"
+blade_dir="${HOME}/.janus/vim-blade"
 
 # janus_vim_blade dependencies
 janus_vim_blade_deps=(janus)
@@ -10,7 +10,7 @@ _janus_vim_blade_installed() {
 
 # Install janus_vim_blade
 _janus_vim_blade_up() {
-  git clone --quiet https://github.com/xsbeats/vim-blade.git ${HOME}/.janus/vim-blade
+  git clone --quiet https://github.com/xsbeats/vim-blade.git ${blade_dir}
 }
 
 # Upgrade janus_vim_blade
