@@ -1,3 +1,6 @@
+# oh_my_zsh dependencies
+oh_my_zsh_deps=(curl)
+
 # Is oh_my_zsh installed?
 _oh_my_zsh_installed() {
   [ -d "${HOME}/.oh-my-zsh/" ]
