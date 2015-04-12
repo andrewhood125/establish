@@ -6,6 +6,8 @@ _establish_usage() {
   echo "USAGE:";
   echo -e "\t`basename ${0}` [up|down|upgrade]"
   echo -e "\t`basename ${0}` create"
+  echo -e "\t`basename ${0}` test"
+  echo -e "\t`basename ${0}` self-update"
   exit 1;
 }
 
@@ -27,6 +29,9 @@ case "$1" in
     done
     TEST=true
     . "${ESTABLISH_DIR}/lib/up.sh"
+    ;;
+  "self-update")
+    cd ${ESTABLISH_DIR} && git pull
     ;;
   *)
     _establish_usage
