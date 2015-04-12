@@ -4,9 +4,12 @@ unique_deps=()
 . "${ESTABLISH_DIR}/lib/load.sh"
 
 # look for depends.sh or fail
-if [ ! -e "depends.sh" ] ; then
+if [ ! -z "$TEST" && ! -e "depends.sh" ] ; then
   echo "depends.sh not found."
   exit;
+else
+  # load depends.sh
+  . "depends.sh"
 fi
 
 # determine operating system
@@ -18,9 +21,6 @@ else
   echo "Operating system not supported."
   exit;
 fi
-
-# load depends.sh
-. "depends.sh"
 
 # load dependencies
 _load_books "depends.sh" "${deps[@]}"

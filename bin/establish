@@ -19,6 +19,15 @@ case "$1" in
     shift
     . "${ESTABLISH_DIR}/lib/create.sh"
     ;;
+  "test")
+    deps=()
+    # populate deps=() with generic/*
+    for i in ${ESTABLISH_DIR}/generic/*; do
+      deps+=(`basename ${i%.sh}`)
+    done
+    TEST=true
+    . "${ESTABLISH_DIR}/lib/up.sh"
+    ;;
   *)
     _establish_usage
     ;;
