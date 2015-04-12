@@ -1,6 +1,6 @@
 # Is oh_my_zsh installed?
 _oh_my_zsh_installed() {
-  [ -d "${HOME}/.oh_my_zsh/" ]
+  [ -d "${HOME}/.oh-my-zsh/" ]
 }
 
 # Install oh_my_zsh
