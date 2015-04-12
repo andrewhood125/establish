@@ -29,6 +29,8 @@ case "$1" in
     done
     TEST=true
     . "${ESTABLISH_DIR}/lib/up.sh"
+    COMMAND="down"
+    . "${ESTABLISH_DIR}/lib/up.sh"
     ;;
   "self-update")
     cd ${ESTABLISH_DIR} && git pull
