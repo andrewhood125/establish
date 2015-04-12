@@ -3,7 +3,7 @@ homestead_deps=(composer php5-mcrypt)
 
 # Is homestead installed?
 _homestead_installed() {
-  [ -d "~/.composer/vendor/laravel/homestead" ]
+  [ -d "${HOME}/.composer/vendor/laravel/homestead" ]
 }
 
 # Install homestead
