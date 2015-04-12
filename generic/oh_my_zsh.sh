@@ -10,10 +10,10 @@ _oh_my_zsh_up() {
 
 # Upgrade oh_my_zsh
 _oh_my_zsh_upgrade() {
-  upgrade_oh_my_zsh
+  bash "${HOME}/.oh-my-zsh/tools/upgrade.sh"
 }
 
 # Remove oh_my_zsh
 _oh_my_zsh_down() {
-  uninstall_oh_my_zsh
+  bash "${HOME}/.oh-my-zsh/tools/uninstall.sh"
 }
