@@ -1,5 +1,5 @@
 # oh_my_zsh dependencies
-oh_my_zsh_deps=(curl)
+oh_my_zsh_deps=(curl zsh)
 
 # Is oh_my_zsh installed?
 _oh_my_zsh_installed() {
