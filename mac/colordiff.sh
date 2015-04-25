@@ -1,13 +1,14 @@
-
-# colordiff dependencies
-colordiff_deps=()
-
-# Is colordiff installed?
-_colordiff_installed() {
-  return `hash colordiff 2>/dev/null`;
-}
-
 # Install colordiff
 _colordiff_up() {
   brew install colordiff > /dev/null
+}
+
+# Upgrade colordiff
+_colordiff_upgrade() {
+  brew upgrade colordiff > /dev/null
+}
+
+# Remove colordiff
+_colordiff_down() {
+  brew remove colordiff > /dev/null
 }
