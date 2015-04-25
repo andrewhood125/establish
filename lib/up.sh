@@ -54,13 +54,18 @@ for i in ${unique_deps[@]}; do
 
   else
 
-    echo "Installing ${i}..."
-
     if ! _${i}_installed; then
-      eval _${i}_up;
+      printf "Installing ${i}" 
+      _${i}_up &
+      while kill -0 $! 2> /dev/null; do
+        printf "."
+        sleep 1
+      done
     else
-      echo -e "\talready installed."
+      printf "${i}"
     fi
+
+    echo -e " \xE2\x9C\x93"
 
   fi
 done
