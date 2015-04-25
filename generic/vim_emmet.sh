@@ -10,7 +10,7 @@ _vim_emmet_installed() {
 
 # Install vim-emmet
 _vim_emmet_up() {
-  git clone --quiet https://github.com/mattn/vim-emmet $vim_emmet_dir
+  git clone --quiet https://github.com/mattn/emmet-vim $vim_emmet_dir
 }
 
 # Upgrade vim-emmet
