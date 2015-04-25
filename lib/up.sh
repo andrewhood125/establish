@@ -33,6 +33,15 @@ unique_deps=${unique_deps//-/_}
 
 echo "Installing: ${unique_deps[@]}"
 
+# reverse deps if removing
+if [ "$COMMAND" == "down" ] ; then
+  reverse_unique_deps=()
+  for (( idx=${#unique_deps[@]}-1 ; idx>=0 ; idx-- )) ; do
+    reverse_unique_deps=("${unique_deps[idx]}" "${reverse_unique_deps[@]}")
+  done
+  $unique_deps=$reverse_unique_deps
+fi
+
 # install dependencies
 for i in ${unique_deps[@]}; do
 
