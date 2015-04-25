@@ -10,7 +10,7 @@ _vim_sensible_installed() {
 
 # Install vim-sensible
 _vim_sensible_up() {
-  git clone --quiet https://github.com/tpope/vim-sensible
+  git clone --quiet https://github.com/tpope/vim-sensible $vim_sensible_dir
 }
 
 # Upgrade vim-sensible

@@ -10,7 +10,7 @@ _vim_ctrlp_installed() {
 
 # Install vim-ctrlp
 _vim_ctrlp_up() {
-  git clone --quiet https://github.com/kien/ctrlp.vim.git
+  git clone --quiet https://github.com/kien/ctrlp.vim.git $vim_ctrlp_dir
 }
 
 # Upgrade vim-ctrlp

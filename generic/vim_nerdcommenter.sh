@@ -10,7 +10,7 @@ _vim_nerdcommenter_installed() {
 
 # Install vim-nerdcommenter
 _vim_nerdcommenter_up() {
-  git clone --quiet https://github.com/scrooloose/nerdcommenter.git
+  git clone --quiet https://github.com/scrooloose/nerdcommenter.git $vim_nerdcommenter_dir
 }
 
 # Upgrade vim-nerdcommenter

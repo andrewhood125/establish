@@ -10,7 +10,7 @@ _vim_xoria256_installed() {
 
 # Install vim-xoria256
 _vim_xoria256_up() {
-  git clone --quiet https://github.com/vim-scripts/xoria256.vim.git
+  git clone --quiet https://github.com/vim-scripts/xoria256.vim.git $vim_xoria256_dir
 }
 
 # Upgrade vim-xoria256

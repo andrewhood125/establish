@@ -10,7 +10,7 @@ _vim_supertab_installed() {
 
 # Install vim-supertab
 _vim_supertab_up() {
-  git clone --quiet https://github.com/ervandew/supertab.git
+  git clone --quiet https://github.com/ervandew/supertab.git $vim_supertab_dir
 }
 
 # Upgrade vim-supertab

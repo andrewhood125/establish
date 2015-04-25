@@ -10,7 +10,7 @@ _vim_nerdtree_installed() {
 
 # Install vim-nerdtree
 _vim_nerdtree_up() {
-  git clone --quiet https://github.com/scrooloose/nerdtree
+  git clone --quiet https://github.com/scrooloose/nerdtree $vim_nerdtree_dir
 }
 
 # Upgrade vim-nerdtree
