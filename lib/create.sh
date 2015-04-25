@@ -1,5 +1,5 @@
 # Show usage if incorrect number of args
-if [ "$#" -lt 2 ] ; then
+if [ "$#" -lt 1 ] ; then
   echo "USAGE:";
   echo -e "\t`basename ${0}` create ${1:-package} [dependencies ...]\n"
   exit 1;
