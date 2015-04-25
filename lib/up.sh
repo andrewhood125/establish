@@ -31,6 +31,8 @@ _load_books "depends.sh" "${deps[@]}"
 unique_deps=$( awk 'BEGIN{RS=ORS=" "}!a[$0]++' <<<${deps[@]} );
 unique_deps=${unique_deps//-/_}
 
+echo "Installing: ${unique_deps[@]}"
+
 # install dependencies
 for i in ${unique_deps[@]}; do
 
