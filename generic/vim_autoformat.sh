@@ -1,5 +1,5 @@
 # vim-autoformat dependencies
-vim_autoformat_deps=(js-beautify)
+vim_autoformat_deps=(js-beautify pathogen)
 
 vim_autoformat_dir="${HOME}/.vim/bundle/vim-autoformat"
 
