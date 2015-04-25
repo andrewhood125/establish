@@ -30,6 +30,7 @@ _${PACKAGE}_up() {
   git clone --quiet https://github.com/${PACKAGE_PRETTY}/${PACKAGE_PRETTY} \$${PACKAGE}_dir
   sudo apt-get -qq install ${PACKAGE_PRETTY} > /dev/null
   brew install ${PACKAGE_PRETTY} > /dev/null
+  npm install -g ${PACKAGE_PRETTY} > /dev/null
 }
 
 # Upgrade ${PACKAGE_PRETTY}
@@ -38,6 +39,7 @@ _${PACKAGE}_upgrade() {
   cd \$${PACKAGE}_dir && git pull --quiet > /dev/null
   sudo apt-get -qq install ${PACKAGE_PRETTY} > /dev/null
   brew upgrade ${PACKAGE_PRETTY} > /dev/null
+  npm update -g ${PACKAGE_PRETTY} > /dev/null
 }
 
 # Remove ${PACKAGE_PRETTY}
@@ -46,6 +48,7 @@ _${PACKAGE}_down() {
   rm -rf \$${PACKAGE}_dir
   sudo apt-get -qq remove ${PACKAGE_PRETTY} > /dev/null
   brew remove ${PACKAGE_PRETTY} > /dev/null
+  npm uninstall -g ${PACKAGE_PRETTY} > /dev/null
 }"
 
 echo "${BLOCK}" >> "${ESTABLISH_DIR}/generic/${PACKAGE}.sh"
