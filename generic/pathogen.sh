@@ -3,7 +3,7 @@ pathogen_deps=(vim)
 
 # Is pathogen installed?
 _pathogen_installed() {
-  [ -e "${HOME}/autoload/pathogen.vim" ]
+  [ -e "${HOME}/.vim/autoload/pathogen.vim" ]
 }
 
 # Install pathogen
