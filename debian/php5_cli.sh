@@ -1,6 +1,6 @@
 # Install php5_cli
 _php5_cli_up() {
-  sudo apt-get -qq install php5-cli > /dev/null
+  sudo apt-get -qq install php5-cli 2> /dev/null
 }
 
 # Upgrade php5_cli
