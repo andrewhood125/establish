@@ -6,6 +6,7 @@ if [ "$#" -lt 2 ] ; then
 fi
 
 PACKAGE=${1//-/_}
+PACKAGE_PRETTY=${1}
 OS=${2}
 
 # Remove the package and OS from the
@@ -13,35 +14,40 @@ OS=${2}
 shift
 shift
 
-BLOCK="
-# ${PACKAGE} dependencies
+BLOCK="# ${PACKAGE_PRETTY} dependencies
 ${PACKAGE}_deps=($@)
 
-# Is ${PACKAGE} installed?
+# ${PACKAGE}_dir=\"\${HOME}/.vim/bundle/${PACKAGE_PRETTY}\"
+
+# Is ${PACKAGE_PRETTY} installed?
 _${PACKAGE}_installed() {
-  # return \`hash ${PACKAGE} 2>/dev/null\`;
-  # [ -d \"\${HOME}/.${PACKAGE}/\" ]
+  # return \`hash ${PACKAGE_PRETTY} 2>/dev/null\`;
+  # [ -d \"\${HOME}/.${PACKAGE_PRETTY}/\" ]
+  # [ -d \"\$${PACKAGE}_dir\" ]
+  # [ -e \"\${HOME}/.${PACKAGE_PRETTY}\" ]
 }
 
-# Install ${PACKAGE}
+# Install ${PACKAGE_PRETTY}
 _${PACKAGE}_up() {
-  # git clone --quiet https://github.com/${PACKAGE}/${PACKAGE}
-  # sudo apt-get -qq install ${PACKAGE} > /dev/null
-  # brew install ${PACKAGE} > /dev/null
+  # git clone --quiet https://github.com/${PACKAGE_PRETTY}/${PACKAGE_PRETTY}
+  # sudo apt-get -qq install ${PACKAGE_PRETTY} > /dev/null
+  # brew install ${PACKAGE_PRETTY} > /dev/null
 }
 
-# Upgrade ${PACKAGE}
+# Upgrade ${PACKAGE_PRETTY}
 _${PACKAGE}_upgrade() {
-  # cd ~/.${PACKAGE} && git pull --quiet > /dev/null
-  # sudo apt-get -qq install ${PACKAGE} > /dev/null
-  # brew upgrade ${PACKAGE} > /dev/null
+  # cd ~/.${PACKAGE_PRETTY} && git pull --quiet > /dev/null
+  # cd \$${PACKAGE}_dir && git pull --quiet > /dev/null
+  # sudo apt-get -qq install ${PACKAGE_PRETTY} > /dev/null
+  # brew upgrade ${PACKAGE_PRETTY} > /dev/null
 }
 
-# Remove ${PACKAGE}
+# Remove ${PACKAGE_PRETTY}
 _${PACKAGE}_down() {
-  # rm -rf ~/.${PACKAGE}
-  # sudo apt-get -qq remove ${PACKAGE} > /dev/null
-  # brew remove ${PACKAGE} > /dev/null
+  # rm -rf ~/.${PACKAGE_PRETTY}
+  # rm -rf \$${PACKAGE}_dir
+  # sudo apt-get -qq remove ${PACKAGE_PRETTY} > /dev/null
+  # brew remove ${PACKAGE_PRETTY} > /dev/null
 }"
 
 echo "${BLOCK}" >> "${ESTABLISH_DIR}/${OS}/${PACKAGE}.sh"
