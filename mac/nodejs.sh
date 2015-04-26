@@ -1,14 +1,6 @@
-# nodejs dependencies
-nodejs_deps=()
-
-# Is nodejs installed?
-_nodejs_installed() {
-  return `hash node 2>/dev/null`;
-}
-
 # Install nodejs
 _nodejs_up() {
-  brew install node > /dev/null
+  brew install node &> /dev/null
 }
 
 # Upgrade nodejs
