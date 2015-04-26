@@ -10,5 +10,5 @@ _curl_upgrade() {
 
 # Remove curl
 _curl_down() {
-  brew remove curl > /dev/null
+  brew remove curl &> /dev/null
 }
