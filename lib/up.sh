@@ -31,8 +31,10 @@ _load_books "depends.sh" "${deps[@]}"
 unique_deps=$( awk 'BEGIN{RS=ORS=" "}!a[$0]++' <<<${deps[@]} );
 unique_deps=${unique_deps//-/_}
 
+# display what is to be installled
 echo "Installing: ${unique_deps[@]}"
 
+# Establish sudo so we can utilize it within the timeout
 sudo -p "Establish may need root, to prevent hang ups please authorize now: " pwd > /dev/null
 
 # reverse deps if removing

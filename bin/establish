@@ -13,10 +13,11 @@ _establish_usage() {
 
 case "$1" in
   "" | "up" | "down" | "upgrade")
-    COMMAND=$1
+    COMMAND=${1-"up"}
     shift
     . "${ESTABLISH_DIR}/lib/up.sh"
     ;;
+
   "create")
     shift
     . "${ESTABLISH_DIR}/lib/create.sh"
