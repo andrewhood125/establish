@@ -1,12 +1,11 @@
 OS="";
 unique_deps=()
 
+# Functions On How To Load Books
 . "${ESTABLISH_DIR}/lib/load.sh"
 
 # look for depends.sh or fail
-if [ -n "$TEST" ] ; then
-  echo "TEST MODE"
-elif [ ! -e "depends.sh" ] ; then
+if [ ! -e "depends.sh" ] ; then
   echo "depends.sh not found."
   exit;
 else
@@ -32,28 +31,28 @@ fi
 # load dependencies
 _load_books "depends.sh" "${deps[@]}"
 
+# reverse deps if removing
+if [ "$COMMAND" == "down" ] ; then
+  reverse_deps=()
+  for (( idx=${#deps[@]}; idx >= 0; idx-- )); do
+    reverse_deps+=(${deps[idx]})
+  done
+  deps=$reverse_deps
+fi
+
 # remove duplicates
 unique_deps=$( awk 'BEGIN{RS=ORS=" "}!a[$0]++' <<<${deps[@]} );
 unique_deps=${unique_deps//-/_}
 
-# display what is to be installled
-echo "Installing: ${unique_deps[@]}"
-
 # Establish sudo so we can utilize it within the timeout
 sudo -p "Establish may need root, to prevent hang ups please authorize now: " pwd > /dev/null
 
-# reverse deps if removing
-if [ "$COMMAND" == "down" ] ; then
-  reverse_unique_deps=()
-  for (( idx=${#unique_deps[@]}-1 ; idx>=0 ; idx-- )) ; do
-    reverse_unique_deps=("${unique_deps[idx]}" "${reverse_unique_deps[@]}")
-  done
-  $unique_deps=$reverse_unique_deps
-fi
+
+# Full List Of Packages
+echo "Packages: ${unique_deps[@]}"
 
 # install dependencies
 for i in ${unique_deps[@]}; do
-
   case $COMMAND in
     "upgrade")
       printf "Upgrading ${i}" 
@@ -77,7 +76,12 @@ for i in ${unique_deps[@]}; do
       else
         printf "${i}"
       fi
-      echo -e " \xE2\x9C\x93"
+
+      if _${i}_installed; then
+        echo -e "${RED} ${CROSS_MARK} ${RESET}"
+      else
+        echo -e "${GREEN} $CHECK_MARK ${RESET}"
+      fi
       ;;
 
     *)
@@ -91,12 +95,20 @@ for i in ${unique_deps[@]}; do
       else
         printf "${i}"
       fi
-      echo -e " \xE2\x9C\x93"
+      if _${i}_installed; then
+        # Check Mark
+        echo -e "${GREEN} $CHECK_MARK ${RESET}"
+      else
+        # X mark
+        echo -e "${RED} ${CROSS_MARK} ${RESET}"
+      fi
       ;;
 
   esac
 
 done
+
+echo -e "\nYay! Dependencies are installed! Running _after()\n"
 
 # run _after if it exists
 if $(type -t _after > /dev/null) ; then
