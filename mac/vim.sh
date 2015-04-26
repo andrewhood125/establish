@@ -10,5 +10,5 @@ _vim_upgrade() {
 
 # Remove vim
 _vim_down() {
-  brew remove vim > /dev/null
+  brew remove vim &> /dev/null
 }
