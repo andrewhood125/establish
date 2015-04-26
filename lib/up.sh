@@ -19,6 +19,11 @@ if [ -f "/etc/debian_version" ] ; then
   OS="debian";
 elif [ `uname` == "Darwin" ] ; then
   OS="mac";
+  # load brew book
+  . "${ESTABLISH_DIR}/mac/brew.sh"
+  if ! _brew_installed; then
+    _brew_up
+  fi
 else
   echo "Operating system not supported."
   exit;
@@ -49,38 +54,48 @@ fi
 # install dependencies
 for i in ${unique_deps[@]}; do
 
-  if [ "$COMMAND" == "down" ] ; then
-
-    echo "Removing ${i}..."
-
-    if _${i}_installed; then
-      eval _${i}_down;
-    else
-      echo -e "\tnot installed."
-    fi
-
-  elif [ "$COMMAND" == "upgrade" ] ; then
-
-    echo "Upgrading ${i}..."
-
-    eval _${i}_upgrade;
-
-  else
-
-    if ! _${i}_installed; then
-      printf "Installing ${i}" 
-      _${i}_up &
+  case $COMMAND in
+    "upgrade")
+      printf "Upgrading ${i}" 
+      _${i}_upgrade &
       while kill -0 $! 2> /dev/null; do
         printf "."
         sleep 1
       done
-    else
       printf "${i}"
-    fi
+      echo -e " \xE2\x9C\x93"
+      ;;
 
-    echo -e " \xE2\x9C\x93"
+    "down")
+      if _${i}_installed; then
+        printf "Removing ${i}" 
+        _${i}_down &
+        while kill -0 $! 2> /dev/null; do
+          printf "."
+          sleep 1
+        done
+      else
+        printf "${i}"
+      fi
+      echo -e " \xE2\x9C\x93"
+      ;;
 
-  fi
+    *)
+      if ! _${i}_installed; then
+        printf "Installing ${i}" 
+        _${i}_up &
+        while kill -0 $! 2> /dev/null; do
+          printf "."
+          sleep 1
+        done
+      else
+        printf "${i}"
+      fi
+      echo -e " \xE2\x9C\x93"
+      ;;
+
+  esac
+
 done
 
 # run _after if it exists
