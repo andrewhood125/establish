@@ -33,6 +33,8 @@ unique_deps=${unique_deps//-/_}
 
 echo "Installing: ${unique_deps[@]}"
 
+sudo -p "Establish may need root, to prevent hang ups please authorize now: " pwd > /dev/null
+
 # reverse deps if removing
 if [ "$COMMAND" == "down" ] ; then
   reverse_unique_deps=()
